@@ -1,6 +1,4 @@
 import React from "react";
-import GoalForm from "./components/GoalForm";
-import GoalList from "./components/GoalList";
 
 function App() {
   const [goals, setGoals] = React.useState([]);
@@ -17,7 +15,9 @@ function App() {
 
   function handleDeleteItem(index) {
     // remove item at index
+    console.log("index to be deleted", index);
     const updated = goals.filter((item, i) => i != index);
+
     setGoals(updated);
   }
 
@@ -33,13 +33,32 @@ function App() {
     <div>
       <h1>Goal tracker app</h1>
       {/* input to get a goal text from a user */}
-      <GoalForm handleSubmit={handleSubmit} />
+      <form onSubmit={handleSubmit}>
+        <input type="text" id="goal" />
+        <button type="submit">Add goal</button>
+      </form>
+
       {/* List of added goals */}
-      <GoalList
-        goals={goals}
-        onToggle={handleGoalStatusUpdate}
-        onDelete={handleDeleteItem}
-      />
+      <ul>
+        {goals.map((goal, index) => (
+          <li key={index}>
+            <input
+              type="checkbox"
+              onClick={() => handleGoalStatusUpdate(index)}
+            />
+            <span
+              style={{
+                paddingLeft: 10,
+                paddingRight: 10,
+                textDecoration: goal.done ? "line-through" : "none",
+              }}
+            >
+              {goal.text}
+            </span>
+            <button onClick={() => handleDeleteItem(index)}>Delete</button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
