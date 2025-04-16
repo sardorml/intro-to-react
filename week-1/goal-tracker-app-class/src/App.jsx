@@ -5,15 +5,10 @@ function App() {
 
   function addGoal(event) {
     event.preventDefault();
-    // Add goal from our input into goals array
+
     const goal = event.target.goal.value;
-
-    console.log("goals:", goals);
-    console.log("goal:", goal);
-
     const updatedGoalsArray = [...goals, goal];
 
-    console.log("updatedGoalsArray:", updatedGoalsArray);
     setGoals(updatedGoalsArray);
   }
 
