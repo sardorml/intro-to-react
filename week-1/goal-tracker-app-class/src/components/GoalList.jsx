@@ -10,14 +10,17 @@ export function GoalList({ goals, toggleGoal, deleteGoals }) {
       }}
     >
       {/* map [{},{}] => [JSX,JSX] */}
-      {goals.map((goal, index) => (
-        <GoalListItem
-          goal={goal}
-          index={index}
-          toggleGoal={toggleGoal}
-          deleteGoals={deleteGoals}
-        />
-      ))}
+      {goals.map((goal, index) => {
+        setTimeout(() => {}, 1000);
+        return (
+          <GoalListItem
+            goal={goal}
+            index={index}
+            toggleGoal={toggleGoal}
+            deleteGoals={deleteGoals}
+          />
+        );
+      })}
     </ul>
   );
 }
