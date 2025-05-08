@@ -5,23 +5,27 @@ import "./index.css";
 import App from "./App.jsx";
 import Pages from "./pages/index.js";
 import NavBar from "./components/NavBar/navbar.jsx";
+import { Provider } from "react-redux";
+import { store } from "./store/index.js";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
-      <NavBar />
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="create" element={<Pages.CreatePost />}></Route>
-          <Route path="posts">
-            <Route index element={<Pages.AllPost />} />
-            <Route path=":id" element={<Pages.ViewPost />} />
-            <Route path=":id/edit" element={<Pages.EditPost />} />
-          </Route>
-          <Route path="search" element={<Pages.SearchPost />}></Route>
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <NavBar />
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="create" element={<Pages.CreatePost />}></Route>
+            <Route path="posts">
+              <Route index element={<Pages.AllPost />} />
+              <Route path=":postId" element={<Pages.ViewPost />} />
+              <Route path=":id/edit" element={<Pages.EditPost />} />
+            </Route>
+            <Route path="search" element={<Pages.SearchPost />}></Route>
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </Provider>
   </StrictMode>
 );
