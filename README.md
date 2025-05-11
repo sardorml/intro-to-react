@@ -1,7 +1,19 @@
 # This is the repository of all of the projects related to Intro to React
 
+- Exercices
 - Week 1
-  - Goal-tracker-app
+  - Goal tracker app (useState, props, components)
+  - Shop inventory (useState, props, components)
+- Week 2
+  - Crypto chart (useEffect, useState)
+  - Trivia app (useEffect, useState, conditional rendering)
+- Week 3
+  - Trivia app (continued)
+  - useContext tutorial
+- Week 4
+  - Blog app (React Router and Redux)
+- Week 5
+  - Blog app (continued)
 
 ## Resources
 
