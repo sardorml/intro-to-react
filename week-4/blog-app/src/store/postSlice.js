@@ -11,6 +11,11 @@ const postSlice = createSlice({
       },
     ],
   },
+  selectors:{
+    viewPost(postId){
+      retur post
+    }
+  }
   reducers: {
     createPost: (state, action) => {
       state.posts.push({
@@ -20,7 +25,6 @@ const postSlice = createSlice({
     },
   },
 });
-
 
 export const postActions = postSlice.actions;
 

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router";
 
 export default function AllPost() {
-  const posts = useSelector((state) => state.posts);
+  const posts = useSelector((state) => state.posts.posts);
 
   return (
     <>

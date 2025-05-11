@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 export default function ViewPost() {
   const posts = useSelector((state) => state.posts);
   const { postId } = useParams();
-
   const post = viewPost();
 
   function viewPost() {

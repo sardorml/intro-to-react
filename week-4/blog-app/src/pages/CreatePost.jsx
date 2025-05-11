@@ -1,15 +1,18 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { postActions } from "../store/post-reducer";
+import { postActions } from "../store/postSlice";
+import { useNavigate } from "react-router";
 
 export default function CreatePost() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   function handleCreatePost(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
     dispatch(postActions.createPost(data));
+    navigate("/posts");
   }
 
   return (
@@ -25,6 +28,7 @@ export default function CreatePost() {
             type="text"
             name="title"
             placeholder="Title"
+            required
           ></input>
           <textarea
             name="content"
@@ -32,6 +36,7 @@ export default function CreatePost() {
             id="exampleFormControlTextarea1"
             rows="2"
             placeholder="Post text here.."
+            required
           ></textarea>
           <button type="submit" className="btn btn-primary">
             Submit Post
