@@ -5,6 +5,8 @@
 
 ## Resources
 
+[React mock interview](https://www.youtube.com/watch?v=QjBAEPcNZHs)
+
 Starter:
 [How React Actually works](https://www.youtube.com/watch?v=za2FZ8QCE18)
 
