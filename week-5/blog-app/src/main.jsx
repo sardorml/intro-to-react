@@ -17,11 +17,11 @@ createRoot(document.getElementById("root")).render(
           <Routes>
             <Route path="/" element={<App />} />
             <Route path="create" element={<Pages.CreatePost />} />
-            <Route path="counter" element={<Pages.Counter />} />
+            {/* <Route path="counter" element={<Pages.Counter />} /> */}
             <Route path="posts">
               <Route index element={<Pages.AllPost />} />
               <Route path=":postId" element={<Pages.ViewPost />} />
-              <Route path=":id/edit" element={<Pages.EditPost />} />
+              <Route path=":postId/edit" element={<Pages.EditPost />} />
             </Route>
             <Route path="search" element={<Pages.SearchPost />} />
           </Routes>
