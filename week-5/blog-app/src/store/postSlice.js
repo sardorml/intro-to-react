@@ -6,6 +6,7 @@ const postSlice = createSlice({
     posts: [
       {
         id: 1,
+        likes: 0,
         title: "initial",
         content: "initial",
       },
