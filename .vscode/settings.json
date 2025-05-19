@@ -4,6 +4,20 @@
     "**/.svn": true,
     "**/.hg": true,
     "**/.DS_Store": true,
-    "**/Thumbs.db": true
+    "**/Thumbs.db": true,
+    "[!w]*/**": true,
+    "w[!e]*/**": true,
+    "we[!e]*/**": true,
+    "wee[!k]*/**": true,
+    "week[!-]*/**": true,
+    "week-[!6]*/**": true,
+    "week-6/[!u]*/**": true,
+    "week-6/u[!s]*/**": true,
+    "week-6/us[!e]*/**": true,
+    "week-6/use[!-]*/**": true,
+    "week-6/use-[!m]*/**": true,
+    "week-6/use-m[!e]*/**": true,
+    "week-6/use-me[!m]*/**": true,
+    "week-6/use-mem[!o]*/**": true
   }
 }
